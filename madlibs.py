@@ -7,6 +7,16 @@ from flask import Flask, render_template, request
 # Flask wants to know this to know what any imported things are relative to.
 app = Flask(__name__)
 
+#route to mablib page
+@app.route('/madlib')
+def show_madlib():
+    player = request.args.get("person")
+    colors = request.args.get("color")
+    nouns = request.args.get("noun")
+    adjectives = request.args.get("adjective")
+
+    return render_template("madlib.html", person=player, color=colors, noun=nouns,adjective=adjectives)
+
 #route to game page
 @app.route('/game')
 def show_game_form():
