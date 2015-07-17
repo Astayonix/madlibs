@@ -14,8 +14,13 @@ def show_madlib():
     colors = request.args.get("color")
     nouns = request.args.get("noun")
     adjectives = request.args.get("adjective")
+    animals = request.args.get("animal")
+    phenomenas = request.args.get("phenomena")
+    verbs = request.args.get("verb")
 
-    return render_template("madlib.html", person=player, color=colors, noun=nouns,adjective=adjectives)
+    return render_template("madlib.html", person=player, color=colors, 
+        noun=nouns,adjective=adjectives, animal=animals, 
+        phenomena=phenomenas,verb=verbs)
 
 #route to game page
 @app.route('/game')
